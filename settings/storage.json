@@ -1,0 +1,81 @@
+{
+    "telemetry.macMachineId": "eba7b73d02e9a963bbdae70f3dae8a27dd116dd10b22c9d0a058414efc807058",
+    "telemetry.machineId": "1daf26589dc7ee867d8b63ed8f913be66d0eb86f2f1dc6ebbd68ec94f27f97fd",
+    "telemetry.sqmId": "{7F7E6528-53DC-465B-B778-DA1D1F4EF010}",
+    "telemetry.devDeviceId": "7dbf043a-b586-4f55-b30b-c188c8c0575f",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///c%3A/Camtasia/camtasia-backup-automation/backup_script"
+            },
+            {
+                "folderUri": "file:///c%3A/Code/cursor-settings-sync"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "windowControlHeight": 35,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///c%3A/Code/teamcal": "__default__profile__",
+            "file:///c%3A/Users/cvane/OneDrive/Projekte/Schaeffler/Videos/create-chatbot-summary": "__default__profile__",
+            "file:///c%3A/Camtasia/camtasia-backup-automation/backup_script": "__default__profile__",
+            "file:///c%3A/Code/cursor-settings-sync": "__default__profile__"
+        },
+        "emptyWindows": {}
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///c%3A/Code/cursor-settings-sync",
+            "backupPath": "C:\\Users\\cvane\\AppData\\Roaming\\Cursor\\Backups\\3e3f9af49031787cf04453d6acd3f446",
+            "uiState": {
+                "mode": 1,
+                "x": 1637,
+                "y": 127,
+                "width": 2955,
+                "height": 1213
+            }
+        },
+        "openedWindows": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#1e1e1e",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#cccccc",
+            "background": "#1e1e1e",
+            "editorBackground": "#1e1e1e",
+            "titleBarBackground": "#3c3c3c",
+            "activityBarBackground": "#333333",
+            "sideBarBackground": "#252526",
+            "statusBarBackground": "#007acc",
+            "statusBarNoFolderBackground": "#68217a"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 0,
+            "sideBarWidth": 300,
+            "auxiliarySideBarWidth": 400,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowSplashWorkspaceOverride": {
+        "layoutInfo": {
+            "auxiliarySideBarWidth": [
+                400,
+                [
+                    "fa3705417b19943b10e396e88f21f73e",
+                    "70217755b523775711431bb64e3c5403",
+                    "b06b19aa6637f91d67e19692e9200d24",
+                    "970bf81ae9c5aeed8ef8f48fb8503c4e"
+                ]
+            ]
+        }
+    }
+}
