@@ -99,8 +99,27 @@ if (Test-Path "$BackupDir\storage.json") {
 # Restore extensions
 Write-Host "`n📋 Restoring extensions..." -ForegroundColor Cyan
 if (Test-Path "$BackupDir\extensions.txt") {
-    $CursorExe = "$env:LOCALAPPDATA\Programs\Cursor\resources\app\bin\cursor.cmd"
-    if (Test-Path $CursorExe) {
+    # Try multiple possible locations for Cursor executable
+    $possiblePaths = @(
+        "$env:LOCALAPPDATA\Programs\Cursor\resources\app\bin\cursor.cmd",
+        "C:\Program Files\cursor\resources\app\bin\cursor.cmd",
+        "${env:ProgramFiles}\cursor\resources\app\bin\cursor.cmd"
+    )
+
+    $CursorExe = $null
+    foreach ($path in $possiblePaths) {
+        if (Test-Path $path) {
+            $CursorExe = $path
+            break
+        }
+    }
+
+    # If not found in standard locations, try PATH
+    if (-not $CursorExe -and (Get-Command cursor -ErrorAction SilentlyContinue)) {
+        $CursorExe = "cursor"
+    }
+
+    if ($CursorExe) {
         $extensions = Get-Content "$BackupDir\extensions.txt"
         $extensionCount = $extensions.Count
         Write-Host "  Found $extensionCount extensions to install" -ForegroundColor White

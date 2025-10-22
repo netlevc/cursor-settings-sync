@@ -65,12 +65,33 @@ if (Test-Path "$env:APPDATA\Cursor\User\globalStorage\storage.json") {
 
 # Get list of installed extensions
 Write-Host "`n📋 Backing up extensions list..." -ForegroundColor Cyan
-$CursorExe = "$env:LOCALAPPDATA\Programs\Cursor\resources\app\bin\cursor.cmd"
-if (Test-Path $CursorExe) {
+
+# Try multiple possible locations for Cursor executable
+$possiblePaths = @(
+    "$env:LOCALAPPDATA\Programs\Cursor\resources\app\bin\cursor.cmd",
+    "C:\Program Files\cursor\resources\app\bin\cursor.cmd",
+    "${env:ProgramFiles}\cursor\resources\app\bin\cursor.cmd"
+)
+
+$CursorExe = $null
+foreach ($path in $possiblePaths) {
+    if (Test-Path $path) {
+        $CursorExe = $path
+        break
+    }
+}
+
+if ($CursorExe) {
     & $CursorExe --list-extensions > "$BackupDir\extensions.txt"
     Write-Host "  ✓ Saved extensions list" -ForegroundColor Green
 } else {
-    Write-Host "  ⚠ Warning: Could not find Cursor executable to list extensions" -ForegroundColor Yellow
+    # Try using 'cursor' from PATH
+    if (Get-Command cursor -ErrorAction SilentlyContinue) {
+        cursor --list-extensions > "$BackupDir\extensions.txt"
+        Write-Host "  ✓ Saved extensions list" -ForegroundColor Green
+    } else {
+        Write-Host "  ⚠ Warning: Could not find Cursor executable to list extensions" -ForegroundColor Yellow
+    }
 }
 
 # Create metadata file
