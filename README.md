@@ -44,17 +44,6 @@ chmod +x *.sh
 
 Restart Cursor after restore.
 
-## Options
-
-**Custom commit message:**
-```powershell
-# Windows
-.\backup.ps1 -CommitMessage "Added new keybindings"
-
-# Linux
-./backup.sh "Added new keybindings"
-```
-
 **Force restore (skip Cursor running check):**
 ```powershell
 # Windows
