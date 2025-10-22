@@ -1,0 +1,24 @@
+# Exclude sensitive and machine-specific data
+globalStorage/
+workspaceStorage/
+logs/
+*.log
+
+# Exclude cache and temporary files
+CachedData/
+Cache/
+Code Cache/
+GPUCache/
+*.tmp
+
+# Exclude session data
+session.json
+machineId
+
+# Node modules if any
+node_modules/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
